@@ -1,0 +1,105 @@
+0	sys Up Time	System Up Time (0.01 s)
+1	enterprises	Company_Node
+2	lancope	This file defines the private Lancope SNMP MIB extensions.
+3	lc Registration	
+4	lc Experimental	
+5	lc Extensions	
+6	lc Proprietary	
+7	security Products	
+8	stealthwatch	
+9	system	
+10	applications	
+11	stealthwatch Core	
+12	stealthwatch CoreMIB	Lancope StealthWatch MIB
+13	stealthwatch Core Config	
+14	stealthwatch Core Org	Organization name used in the subject line of any generated E-mail.
+15	stealthwatch Core Agent Ip	The IP address of the Interface the Stealthwatch Core is communicating on.
+16	stealthwatch Core Stop Message	If for some reason the StealthWatch Core exits this will contain the reason why.
+17	sw Core System	
+18	sw Core System Traffic In Max	Inbound traffic level (bps) that exceeded the Traffic-In Maximum threshold.
+19	sw Core System Traffic Out Max	Outbound traffic level (bps) that exceeded the Traffic-In Maximum threshold.
+20	stealthwatch Core Host	
+21	stealthwatch Core Host Table	A table containing host information.
+22	stealthwatch Core Host Ip	The IP address of a Host. This is the index into the table.
+23	stealthwatch Core HostCI	This is the current Concern Index value for this host.
+24	stealthwatch Core Host Traffic Max	This is the maximum traffic in or out for this host in the last 24 hours. This value is in bps averaged over a 5 minute period.
+25	stealthwatch Core Profile	
+26	stealthwatch Core Profile Table	This is designed to be a table within the Host Table
+27	stealthwatch Core Profile Ip	IP address of the host.
+28	stealthwatch Core Profile Type	When view the traffic being generated, is the host acting as the server or the client in the protocol exchange.
+29	stealthwatch Core Profile Protocol	This represents the type of traffic this host is seeing: 1 = TCP traffic, 2 = UDP traffic, 3 = Other (the Port variable is the IP protocol number).
+30	stealthwatch Core Profile Port	If the protocol is TCP or UDP, this is the port number associated with the traffic. If the protocol is Other, this is the IP protocol number.
+31	stealthwatch Core Touch	
+32	stealthwatch Core Touch Table	Hosts touched by hi CI hosts.
+33	stealthwatch Core Touch Src	IP address of the high CI host.
+34	stealthwatch Core Touch Dst	IP address of the destination host the high CI host obtained data from.
+35	stealthwatch Core Touch Start	Start time when the destination host was first accessed by the high CI host.
+36	stealthwatch Core Touch Bytes	Amount of data in bytes exchanged between the high CI host and the comprimised host.
+37	stealthwatch Core Alarms	
+38	stealthwatch Core Alarms Table	Alarm table.
+39	stealthwatch Core Alarms Id	The unique alarm identifier.
+40	stealthwatch Core Alarms Active	If true the alarm is still active. If false then the alarm has been cleared.
+41	stealthwatch Core Alarms Host	Host Ip Address of the alarm.
+42	stealthwatch Core Alarms Alarm	The Alarm.
+43	stealthwatch Core Alarms Type	The type of alarm: concern - a CI alarm profile - an out of profile alarm traffic - a traffic alarm
+44	stealthwatch Core Alarms Clear By	The name of the user who cleared the alarm.
+45	stealthwatch Core Alarms Detail	Detail information relevant to the specific alarm.
+46	stealthwatch Core Alarms Priority	The priority of the alarm.
+47	s	
+48	Cold Start	This trap is sent when the StealthWatch application begins.
+49	Malformed Frags	Indicates a number of malformed fragments have been sent by the suspect IP, the last one going to the victim IP. Malformed fragments are often signs of an attempt to identify, crash or compromise the receiver of the malformed fragment.
+50	Short Frags	Indicates a number of short fragments have been sent by the suspect IP, the last one going to the victim IP. There generally is not a good reason for short fragments on the network.
+51	Exit	This trap is sent when it has been determined the StealthWatch application has stopped.
+52	Low Traffic	Indicates that the suspect IP has fallen below its' allowable minimum bandwidth over the preceding 5 minutes. The bps is provided.
+53	Subnet Lockout	Indicates that the suspect IP has connected to a server in a zone that it is not allowed to access. The alarm details includes the server in the victim IP address along with the protocol and service used.
+54	MAC Address	Indicates that the MAC address of the suspect IP has changed more than the allowable number of times.  The IP address of the host the suspect IP was communicating with is also provided.  This could indicate a man-in-the-middle attack.
+55	Flood Attack	This trap is sent when an excess number of connections occur or packets transferred between two hosts.
+56	Half Open Attack	Indicates that a possible half-open attack has been attempted by the suspect IP against the victim IP. A half open attack is similar to a SYN Flood attack with the difference that the target host has responded with a significant number of SYN-ACK replies and may now have exhausted it's connection resources. The alarm details include the protocol and service where the half-open attack was detected.
+57	SW System Error	StealthWatch has detected a system error. Contact Lancope Customer Service.
+58	Email Abuse	SMTP traffic threshold exceeded.  Host may be the source of a self-proliferating worm, the source of spam, or is being used as a mail relay by other spam sources.
+59	Hi Concern Target Event	Indicates that the indicated IP has been the recipient of a number of scan or other malicious attacks. The purpose of the target index is to alert you to possible distributed attacks by many outside hosts directed at a single inside host.
+60	Total Traffic Event	Indicates that the suspect IP has sent or received more bytes on the network since the last reset hour than it is authorized to do. The total traffic used by the host up to the time of the alarm is provided.
+61	Host Max Flows	Indicates that the host indicated as the indicated IP has had an excessive number of total flows active. This may be indicative of a DoS or DDoS attempt against this host, or that is is a very active file server (Warz Server?). The number of new flows in the last 5 minutes is displayed.
+62	Host New Flows	Indicates that the host indicated as the indicated IP has had an excessive number of new flows attempted in the preceding 5 minute period. This may be indicative of a DoS or DDoS attempt directed at the host, or that is is a very active file server (Warz Server?). The number of new flows in the last 5 minutes is displayed.
+63	New Host Active	Indicates a new host has sent a packet. Note that by default, this alarm is disabled. However, in certain critical and controlled areas of your network, you may want to enable this alarm to identify any new hosts that become active. The suspect IP address is displayed.
+64	SYNS Received	Indicates that the host indicated as the suspect IP has had an excessive number of received SYN packets. This may be indicative of a DoS or DDoS attempt against this host via a SYN flood, or a port scan by a vulnerability scanner. The number of SYN packets received in the last 5 minutes is displayed.
+65	Traffic Lost	StealthWatch has not observed any traffic on the ethernet port specified in the preceding 5 minutes. This may be indicative of a failed SPAN port or cable between the StealthWatch monitor port and the packet source.
+66	Watch Port Active	Indicates that a protocol and port on the port watch list has become active.  This alarm shows the server IP address as the suspect IP, the client IP as the victim IP and provides the protocol and service used as the detailed information field.
+67	Port Flood Attack	Indicates that the suspect IP has attempted to connect on an excessive number of ports on the 'victim IP'.  This may be indicative of a denial of service attack or an aggressive scan by the suspect IP.
+68	Hi Concern	Indicates that the suspect IP has exceeded the CI threshold. This is generally caused by scanning activity an other nonconformant behavior.
+69	SYN Flood Attack	Indicates that the suspect IP has sent an excessive number of TCP SYN packets in the last 5 minutes.  This may be indicative of a denial of service attack or non-stealthy scanning activity.
+70	UDP Flood Attack	Indicates that the suspect IP has sent an excessive number of UDP packets in the last 5 minutes.  This may be indicative of a denial of service attack or non-stealthy scanning activity.
+71	ICMP Flood Attack	Indicates that the suspect IP has sent an excessive number of ICMP packets in the last 5 minutes.  This may be indicative of a denial of service attack or non-stealthy ping scanning activity, or it may have been stimulated by a UDP port scan.
+72	Pkt Flood Attack	Indicates that the suspect IP has sent an excessive number of short packets to the 'victim IP' in the preceding 5 minutes.  The use of short packets may be indicative of an attempt to flood the destination with a denial of service attack.
+73	Worm Sign	Indicates that the suspect IP may be infected with an email worm.
+74	Mail Relay	Indicates that the suspect IP may be operating as an email relay.
+75	Spam Source	Indicates that the suspect IP may be a source of email spam.
+76	Mail Rejects	Indicates that the suspect IP is receiving a significant number of rejected mail attempts.
+77	File Sharing	Indicates that the suspect IP is transferring a large number of files.
+78	OS Unknown	A host has been detected sending traffic that does not match any known operating system.  This may indicate that the host is handcrafting packets and using them maliciously.  The details field denotes an unknown OS with a number, also called a hash, such as 'OS:43792' or 'OS:77327'.  You can use the number as a query criterion to create a host information report that identifies all hosts using the unknown OS.
+79	Touched	Indicates that a high CI host has exchanged data with an inside host. This may indicate a compromised host.  This alarm shows the host that has possibly been compromised as the 'suspect IP' and the high CI host as the 'other host'.  The alarm details provide the protocol and service that triggered this alarm.
+80	OSNAT	Indicates that a host is using a network address translated (NAT) IP address.  As a result, any operating system information should be considered invalid.
+81	OS Multiple	A host has been detected sending traffic that appears to be from more than one operating system (OS).  This may indicate that the host is handcrafting packets and using them maliciously.  The details field indicates the last OS detected for the host.  If the OS is known, the details field identifies it.  If the OS is unknown, the details field denotes it with a number, also caleld a hash, such as 'OS:43792' or 'OS:77327'.
+82	Long Duration Flow	Indicates an IP communication between an Inside and Outside host that exceeds the configured 'Seconds required to qualify a flow as long duration.'  This alarm detects suspicious channels of communication such as spyware, remote desktop technologies (ie, gotomypc.com), VPNs, IRC botnets, and other covert means of communication.  This alarm is always raised against the Inside host, regardless of Client / Server relationship.  If this alarm is suppressed for an Outside host, any Inside host connecting to that Outside hose is excluded from this alarm.  Tune the Suspect Long Flow alarm on the Advanced Configuration page.
+83	UDP Worm Scan	The behavior of a host resembles a worm scanning and propagating on a UDP port.  This alarm may indicate a rapidly propagating infection, similar to the Witty and SQL Slammer worms.  Investigate this alarm immediately.
+84	System Data Lost	Data has been deleted from the hard drive on the StealthWatch appliance in order to keep it below 95% capacity.  At the beginning of every hour, StealthWatch checks the amount of unused disk space available.  If the amount is less than 5%, StealthWatch deletes the flow.log file from the oldest archive directory and generates this alarm.  This process continues until the amount of unused disk space is greater than 5%, which means that this alarm may occur multiple times.  NOTE:  Suppressing this alarm will not prevent the appliance from deleting data.
+85	System Bandwidth Exceeded	The network traffic being monitored by StealthWatch has exceeded the rated amount for the appliance model.  The system is at risk of dropping important traffic if it continues at the detected level.  The message includes the detected bandwidth in bits per second (bps).
+86	SystemRAID Failed	A RAID device on the StealthWatch appliance has failed. Contact Lancope customer service.
+87	SystemRAIDOK	A RAID device on the StealthWatch appliance has resumed normal operation.
+88	SystemRAID Rebuild	A RAID device on the StealthWatch appliance is being rebuilt.
+89	OOP	Indicates that the suspect IP has a profile violation. The protocol, port and IP address of the other host are provided in the alarm details.
+90	Hi Traffic	Indicates that the suspect IP has exceeded its' allowable bandwidth over the preceding 5 minutes. The bps is provided.
+91	System Hi Traffic In	The total inbound system traffic over the past 5 minutes has exceeded the alarm threshold. The bps observed that triggered the alarm is provided.
+92	System Hi Traffic Out	The total system outbound traffic over the past 5 minutes has exceeded the alarm threshold. The bps observed that triggered the alarm is provided.
+93	Watch Host Active	Indicates that a watch host has been active.  This alarm is triggered anytime that the watch host transmits a packet or any outside host on the watch list receives a packet.
+94	stealthwatch Core Groups	
+95	s Group	A collection of objects providing trap information.
+96	stealthwatch Core Alarms Group	A collection of alarm objects.
+97	stealthwatch Core Touched Group	A collection of touched objects.
+98	stealthwatch Core Profile Group	A collection of profile objects.
+99	stealthwatch Core Host Group	A collection of host objects.
+100	sw Core System Group	A collection of system objects.
+101	stealthwatch Core Agent Group	A collection of agent objects.
+102	stealthwatch Core Org Group	A collection of organization objects.
+103	stealthwatch Core Stop Group	A collection of stop objects.
+104	snmp TrapOID	Type of Event
